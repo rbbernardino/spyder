@@ -2,11 +2,15 @@
 
 public class FallingObject : MonoBehaviour
 {
-	public Vector2 speed = new Vector2(0, -10);
+	private float speed;
+	private GameObject _controller;
+
 	// Use this for initialization
 	void Start()
 	{
-		GetComponent<Rigidbody2D>().velocity = speed;
+		_controller = GameObject.FindGameObjectWithTag ("GameController");
+		speed = _controller.GetComponent<Settings> ().FallingObjectSpeed;
+		GetComponent<Rigidbody2D>().velocity = new Vector2(0, -speed);
 	}
 
 	void  Update(){

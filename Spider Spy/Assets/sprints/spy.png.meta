@@ -1,0 +1,110 @@
+fileFormatVersion: 2
+guid: b1ab6c44f5f2e5e48a4c6921c82f8b4f
+timeCreated: 1440193236
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: spy_climb_spider
+    21300002: spy_jump_spider
+    21300004: spy_climb_normal
+    21300006: spy_jump_normal
+    21300008: spy_death
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: spy_climb_spider
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 153
+        width: 1195
+        height: 1826
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spy_jump_spider
+      rect:
+        serializedVersion: 2
+        x: 2441
+        y: 524
+        width: 2707
+        height: 1358
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spy_climb_normal
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 497
+        width: 586
+        height: 886
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spy_jump_normal
+      rect:
+        serializedVersion: 2
+        x: 5379
+        y: 465
+        width: 790
+        height: 875
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spy_death
+      rect:
+        serializedVersion: 2
+        x: 6612
+        y: 311
+        width: 703
+        height: 1407
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

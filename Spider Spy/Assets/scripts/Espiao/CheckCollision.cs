@@ -18,7 +18,8 @@ public class CheckCollision : MonoBehaviour
 	}
 
 	// Die by collision
-	void OnTriggerEnter2D(Collider2D other){
+	// Collider is on child objects
+	public void OnChildTriggerEnter(Collider2D other){
 		string tag = other.gameObject.tag;
 		switch (tag) {
 		case ("Item"):

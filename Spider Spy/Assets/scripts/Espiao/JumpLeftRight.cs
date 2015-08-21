@@ -6,41 +6,69 @@ public class JumpLeftRight : MonoBehaviour {
 	[SerializeField] private float leftLimitX = -1.53f;
 	[SerializeField] private float rightLimitX = 1.45f;
 
+	public GameObject PlayerClimbLeft;
+	public GameObject PlayerClimbRight;
+	public GameObject PlayerJumpLeft;
+	public GameObject PlayerJumpRight;
+
+	private GameObject ActivePlayer;
+
 	private bool movingLeft = false;
 	private bool movingRight = false;
 	// Use this for initialization
 	void Start () {
+		PlayerClimbLeft.SetActive (true);
+		ActivePlayer = PlayerClimbLeft;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		float currentPositionX = transform.position.x;
+
+		// jump left
 		if (Input.GetKeyDown ("space") && !movingLeft && !movingRight && currentPositionX > leftLimitX) {
 			gameObject.GetComponent<AudioSource>().Play ();
 			gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2((-1f)*moveForce, 0);
 			movingLeft = true;
-			gameObject.GetComponent<ParticleSystem>().enableEmission = false;
+
+			ActivePlayer.SetActive(false);
+			PlayerJumpLeft.SetActive(true);
+			ActivePlayer = PlayerJumpLeft;
 		}
+
+		// Climb left
 		if (transform.position.x <= leftLimitX && movingLeft == true)
 		{
 			gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 			gameObject.transform.position = new Vector2(leftLimitX, gameObject.transform.position.y);
 			movingLeft = false;
-			gameObject.GetComponent<ParticleSystem>().enableEmission = true;
+
+			ActivePlayer.SetActive(false);
+			PlayerClimbLeft.SetActive(true);
+			ActivePlayer = PlayerClimbLeft;
 		}
 
+		// jump right
 		if (Input.GetKeyDown ("space") && !movingRight && !movingLeft && currentPositionX < rightLimitX) {
 			gameObject.GetComponent<AudioSource>().Play ();
 			gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(moveForce, 0);
 			movingRight = true;
-			gameObject.GetComponent<ParticleSystem>().enableEmission = false;
+
+			ActivePlayer.SetActive(false);
+			PlayerJumpRight.SetActive(true);
+			ActivePlayer = PlayerJumpRight;
 		}
+
+		// Climb right
 		if (transform.position.x >= rightLimitX && movingRight == true)
 		{
 			gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 			gameObject.transform.position = new Vector2(rightLimitX, gameObject.transform.position.y);
 			movingRight = false;
-			gameObject.GetComponent<ParticleSystem>().enableEmission = true;
+
+			ActivePlayer.SetActive(false);
+			PlayerClimbRight.SetActive(true);
+			ActivePlayer = PlayerClimbRight;
 		}
 	}
 }
