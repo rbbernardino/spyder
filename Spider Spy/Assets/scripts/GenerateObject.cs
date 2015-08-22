@@ -61,6 +61,7 @@ public class GenerateObject : MonoBehaviour
 			Instantiate(threatObject, transform.position - ( Vector3.right * pos/2 ) + ( Vector3.up * 3 * difUnit ), transform.rotation);
 			Instantiate(item, transform.position - ( Vector3.right * pos ) + ( Vector3.up * 4 * difUnit ), transform.rotation);
 			break;
+/*
 		case (10): // many threatObjects center, item sides
 			Instantiate(threatObject, transform.position, transform.rotation);
 			Instantiate(threatObject, transform.position +  ( Vector3.up * 1 * difUnit ), transform.rotation );
@@ -71,8 +72,9 @@ public class GenerateObject : MonoBehaviour
 			Instantiate(item, transform.position - ( Vector3.right * pos ) + ( Vector3.up * 5 * difUnit ), transform.rotation);
 			Instantiate(item, transform.position + ( Vector3.right * pos ) + ( Vector3.up * 5 * difUnit ), transform.rotation);
 			break;
+            */
 		}
-		
+	
 		//_score.UpScore ();
 	}
 }

@@ -1,16 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Menu : MonoBehaviour {
+public class MainMenu : MonoBehaviour {
 
 	public void Play()
 	{
-		StartCoroutine (GoPlay ());
-	}
+        Application.LoadLevel("Gameplay");
+        //StartCoroutine (GoPlay ());
+    }
 
 	public void Credits()
 	{
-		Application.LoadLevel ("Credits");
+		//Application.LoadLevel ("Credits");
 	}
 
 	IEnumerator GoPlay()

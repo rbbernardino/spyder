@@ -11,14 +11,18 @@ public class JumpLeftRight : MonoBehaviour {
 	public GameObject PlayerJumpLeft;
 	public GameObject PlayerJumpRight;
 
-	private GameObject ActivePlayer;
+    public GameObject RunEffectContainer;
+
+    private GameObject ActivePlayer;
 
 	private bool movingLeft = false;
 	private bool movingRight = false;
+
 	// Use this for initialization
 	void Start () {
 		PlayerClimbLeft.SetActive (true);
 		ActivePlayer = PlayerClimbLeft;
+
 	}
 	
 	// Update is called once per frame
@@ -31,6 +35,7 @@ public class JumpLeftRight : MonoBehaviour {
 			gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2((-1f)*moveForce, 0);
 			movingLeft = true;
 
+            // change to jumping left sprite
 			ActivePlayer.SetActive(false);
 			PlayerJumpLeft.SetActive(true);
 			ActivePlayer = PlayerJumpLeft;
@@ -46,10 +51,13 @@ public class JumpLeftRight : MonoBehaviour {
 			ActivePlayer.SetActive(false);
 			PlayerClimbLeft.SetActive(true);
 			ActivePlayer = PlayerClimbLeft;
-		}
 
-		// jump right
-		if (Input.GetKeyDown ("space") && !movingRight && !movingLeft && currentPositionX < rightLimitX) {
+            // invert x position of RunEffectContainer animation
+            RunEffectContainer.transform.position = new Vector2(0, RunEffectContainer.transform.position.y);
+        }
+
+        // jump right
+        if (Input.GetKeyDown ("space") && !movingRight && !movingLeft && currentPositionX < rightLimitX) {
 			gameObject.GetComponent<AudioSource>().Play ();
 			gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(moveForce, 0);
 			movingRight = true;
@@ -57,10 +65,10 @@ public class JumpLeftRight : MonoBehaviour {
 			ActivePlayer.SetActive(false);
 			PlayerJumpRight.SetActive(true);
 			ActivePlayer = PlayerJumpRight;
-		}
+        }
 
-		// Climb right
-		if (transform.position.x >= rightLimitX && movingRight == true)
+        // Climb right
+        if (transform.position.x >= rightLimitX && movingRight == true)
 		{
 			gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 			gameObject.transform.position = new Vector2(rightLimitX, gameObject.transform.position.y);
@@ -69,6 +77,9 @@ public class JumpLeftRight : MonoBehaviour {
 			ActivePlayer.SetActive(false);
 			PlayerClimbRight.SetActive(true);
 			ActivePlayer = PlayerClimbRight;
-		}
-	}
+
+            // invert x position of RunEffectContainer animation
+            RunEffectContainer.transform.position = new Vector2(8.62f, RunEffectContainer.transform.position.y);
+        }
+    }
 }

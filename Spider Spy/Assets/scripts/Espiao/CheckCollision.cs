@@ -19,7 +19,7 @@ public class CheckCollision : MonoBehaviour
 
 	// Die by collision
 	// Collider is on child objects
-	public void OnChildTriggerEnter(Collider2D other){
+	void OnTriggerEnter2D(Collider2D other){
 		string tag = other.gameObject.tag;
 		switch (tag) {
 		case ("Item"):
@@ -29,7 +29,8 @@ public class CheckCollision : MonoBehaviour
 			break;
 		case ("Bomb"):
 			GameObject.FindGameObjectWithTag("BombExplosion").GetComponent<AudioSource>().Play();
-			Die();
+            Destroy(other.gameObject);
+            Die();
 			break;
 		}
 	}
