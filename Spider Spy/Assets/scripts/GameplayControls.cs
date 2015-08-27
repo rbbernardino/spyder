@@ -22,6 +22,9 @@ public class GameplayControls : MonoBehaviour {
 
     public void HidePlayer() { Player.SetActive(false); }
 
+    public void ResetGame() { Application.LoadLevel(Application.loadedLevel); }
+    public void MainMenu() { Application.LoadLevel("MenuPrincipal"); }
+
     public void Pause()
     {
         //Set time.timescale to 0, this will cause animations and physics to stop updating
@@ -32,7 +35,7 @@ public class GameplayControls : MonoBehaviour {
 
     public void Resume()
     {
-        menuPause.SetActive(true);
+        menuPause.SetActive(false);
         Time.timeScale = 1;
     }
 }
