@@ -8,11 +8,9 @@ public class GetRandomObject : MonoBehaviour {
 
 	public GameObject GetRandomThreatObject() {
 		float rdmNumber = Random.value;
-		if (rdmNumber < 0.3)
+		if (rdmNumber < 0.5)
 			return missle1;
-		else if (rdmNumber >= 0.3 && rdmNumber < 0.6)
+		else// if (rdmNumber >= 0.3 && rdmNumber < 0.6)
 			return missle2;
-		else
-			return bomb;
 	}
 }
