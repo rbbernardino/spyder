@@ -15,14 +15,18 @@ public class JumpLeftRight : MonoBehaviour {
 
     private GameObject ActivePlayer;
 
+    private SoundControls soundControls;
+
 	private bool movingLeft = false;
 	private bool movingRight = false;
 
 	// Use this for initialization
 	void Start () {
-		PlayerClimbLeft.SetActive (true);
-		ActivePlayer = PlayerClimbLeft;
+        soundControls = GameObject.FindGameObjectWithTag("SoundsController").GetComponent<SoundControls>();
 
+        PlayerClimbLeft.SetActive (true);
+		ActivePlayer = PlayerClimbLeft;
+        soundControls.PlayClimbingSound();
 	}
 	
 	// Update is called once per frame
@@ -31,7 +35,7 @@ public class JumpLeftRight : MonoBehaviour {
 
 		// jump left
 		if ((Input.GetKeyDown ("space") || TouchedScreen()) && !movingLeft && !movingRight && currentPositionX > leftLimitX) {
-			gameObject.GetComponent<AudioSource>().Play ();
+			soundControls.PlayJump();
 			gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2((-1f)*moveForce, 0);
 			movingLeft = true;
 
@@ -44,27 +48,39 @@ public class JumpLeftRight : MonoBehaviour {
 		// Climb left
 		if (transform.position.x <= leftLimitX && movingLeft == true)
 		{
+            // ajusta posicao do Player
 			gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 			gameObject.transform.position = new Vector2(leftLimitX, gameObject.transform.position.y);
-			movingLeft = false;
 
+            // sinaliza final de pulo
+            movingLeft = false;
+
+            // troca sprint para subindo
 			ActivePlayer.SetActive(false);
 			PlayerClimbLeft.SetActive(true);
 			ActivePlayer = PlayerClimbLeft;
 
             // invert x position of RunEffectContainer animation
             RunEffectContainer.transform.position = new Vector2(0, RunEffectContainer.transform.position.y);
+
+            // inicia som de subida
+            soundControls.PlayClimbingSound();
         }
 
         // jump right
         if ((Input.GetKeyDown ("space") || TouchedScreen()) && !movingRight && !movingLeft && currentPositionX < rightLimitX) {
-			gameObject.GetComponent<AudioSource>().Play ();
+            // para som de subida
+            soundControls.StopClimbingSound();
+
+            gameObject.GetComponent<AudioSource>().Play ();
 			gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(moveForce, 0);
 			movingRight = true;
 
 			ActivePlayer.SetActive(false);
 			PlayerJumpRight.SetActive(true);
 			ActivePlayer = PlayerJumpRight;
+
+            soundControls.StopClimbingSound();
         }
 
         // Climb right
@@ -80,6 +96,9 @@ public class JumpLeftRight : MonoBehaviour {
 
             // invert x position of RunEffectContainer animation
             RunEffectContainer.transform.position = new Vector2(8.62f, RunEffectContainer.transform.position.y);
+
+            // inicia som de subida
+            soundControls.PlayClimbingSound();
         }
     }
 

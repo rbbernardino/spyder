@@ -6,10 +6,12 @@ public class GameplayControls : MonoBehaviour {
     [SerializeField] private GameObject menuGameOver;
 
     private GameObject Player;
+    private SoundControls soundControls;
 
     public void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
+        soundControls = GameObject.FindGameObjectWithTag("SoundsController").GetComponent<SoundControls>();
         menuPause.SetActive(false);
         menuGameOver.SetActive(false);
     }
@@ -22,8 +24,18 @@ public class GameplayControls : MonoBehaviour {
 
     public void HidePlayer() { Player.SetActive(false); }
 
-    public void ResetGame() { Application.LoadLevel(Application.loadedLevel); }
-    public void MainMenu() { Application.LoadLevel("MenuPrincipal"); }
+    public void ResetGame()
+    {
+        soundControls.PlayButton();
+        Application.LoadLevel(Application.loadedLevel);
+    }
+
+    public void MainMenu()
+    {
+        soundControls.PlayButton();
+        Application.LoadLevel("MenuPrincipal");
+        Time.timeScale = 1;
+    }
 
     public void Pause()
     {
@@ -31,11 +43,13 @@ public class GameplayControls : MonoBehaviour {
         Time.timeScale = 0;
         //Show pause menu
         menuPause.SetActive(true);
+        soundControls.StopClimbingSound();
     }
 
     public void Resume()
     {
         menuPause.SetActive(false);
         Time.timeScale = 1;
+        soundControls.PlayClimbingSound();
     }
 }
