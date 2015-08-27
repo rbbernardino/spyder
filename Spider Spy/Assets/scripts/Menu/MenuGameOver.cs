@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MenuPopUp : MonoBehaviour {
+public class MenuGameOver : MonoBehaviour {
 
 	public void Reset()
 	{
