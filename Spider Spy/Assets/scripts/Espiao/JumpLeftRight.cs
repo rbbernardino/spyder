@@ -30,7 +30,7 @@ public class JumpLeftRight : MonoBehaviour {
 		float currentPositionX = transform.position.x;
 
 		// jump left
-		if (Input.GetKeyDown ("space") && !movingLeft && !movingRight && currentPositionX > leftLimitX) {
+		if ((Input.GetKeyDown ("space") || TouchedScreen()) && !movingLeft && !movingRight && currentPositionX > leftLimitX) {
 			gameObject.GetComponent<AudioSource>().Play ();
 			gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2((-1f)*moveForce, 0);
 			movingLeft = true;
@@ -57,7 +57,7 @@ public class JumpLeftRight : MonoBehaviour {
         }
 
         // jump right
-        if (Input.GetKeyDown ("space") && !movingRight && !movingLeft && currentPositionX < rightLimitX) {
+        if ((Input.GetKeyDown ("space") || TouchedScreen()) && !movingRight && !movingLeft && currentPositionX < rightLimitX) {
 			gameObject.GetComponent<AudioSource>().Play ();
 			gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(moveForce, 0);
 			movingRight = true;
@@ -81,5 +81,12 @@ public class JumpLeftRight : MonoBehaviour {
             // invert x position of RunEffectContainer animation
             RunEffectContainer.transform.position = new Vector2(8.62f, RunEffectContainer.transform.position.y);
         }
+    }
+
+    private static bool TouchedScreen() {
+        if (Input.touchCount > 0)
+            return Input.GetTouch(0).phase == TouchPhase.Began;
+        else
+            return false;
     }
 }
