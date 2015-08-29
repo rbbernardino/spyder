@@ -13,6 +13,6 @@ public class ScoreExibition : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		_text.text =  _Score._score.ToString() + " Pastas";
+		_text.text =  _Score._score.ToString();
 	}
 }

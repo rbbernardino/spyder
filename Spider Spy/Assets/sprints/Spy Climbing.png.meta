@@ -1,0 +1,297 @@
+fileFormatVersion: 2
+guid: c0c328298b0deaa4fb2ee4b292a7f540
+timeCreated: 1440803294
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: spy_climb_0
+    21300002: spy_climb_1
+    21300004: spy_climb_2
+    21300006: spy_climb_3
+    21300008: spy_climb_4
+    21300010: spy_climb_5
+    21300012: spy_climb_6
+    21300014: spy_climb_7
+    21300016: spy_climb_8
+    21300018: spy_climb_9
+    21300020: spy_climb_10
+    21300022: spy_climb_11
+    21300024: spy_climb_12
+    21300026: spy_climb_13
+    21300028: spy_climb_14
+    21300030: spy_climb_15
+    21300032: spy_climb_16
+    21300034: spy_climb_17
+    21300036: spy_climb_18
+    21300038: spy_climb_19
+    21300040: spy_climb_20
+    21300042: spy_climb_21
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 25
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: spy_climb_0
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 2164
+        width: 372
+        height: 823
+      alignment: 9
+      pivot: {x: .121700123, y: .35805878}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spy_climb_1
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 2164
+        width: 371
+        height: 823
+      alignment: 9
+      pivot: {x: .125489101, y: .35830915}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spy_climb_2
+      rect:
+        serializedVersion: 2
+        x: 1434
+        y: 2294
+        width: 347
+        height: 615
+      alignment: 9
+      pivot: {x: .216557667, y: .267874658}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spy_climb_3
+      rect:
+        serializedVersion: 2
+        x: 2078
+        y: 2298
+        width: 347
+        height: 615
+      alignment: 9
+      pivot: {x: .205470726, y: .261113763}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spy_climb_4
+      rect:
+        serializedVersion: 2
+        x: 2636
+        y: 2332
+        width: 294
+        height: 399
+      alignment: 9
+      pivot: {x: .164629668, y: .318404049}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spy_climb_5
+      rect:
+        serializedVersion: 2
+        x: 3141
+        y: 2332
+        width: 295
+        height: 399
+      alignment: 9
+      pivot: {x: .158501059, y: .317603081}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spy_climb_6
+      rect:
+        serializedVersion: 2
+        x: 3685
+        y: 2239
+        width: 308
+        height: 644
+      alignment: 9
+      pivot: {x: .20155631, y: .341782838}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spy_climb_7
+      rect:
+        serializedVersion: 2
+        x: 4232
+        y: 2241
+        width: 308
+        height: 642
+      alignment: 9
+      pivot: {x: .203216955, y: .339644849}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spy_climb_8
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 1108
+        width: 299
+        height: 825
+      alignment: 9
+      pivot: {x: .1310139, y: .346145689}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spy_climb_9
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 1108
+        width: 300
+        height: 825
+      alignment: 9
+      pivot: {x: .127763674, y: .345533103}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spy_climb_10
+      rect:
+        serializedVersion: 2
+        x: 1459
+        y: 1155
+        width: 258
+        height: 767
+      alignment: 9
+      pivot: {x: .188997015, y: .311668903}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spy_climb_11
+      rect:
+        serializedVersion: 2
+        x: 2098
+        y: 1155
+        width: 259
+        height: 767
+      alignment: 9
+      pivot: {x: .194269016, y: .311035633}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spy_climb_12
+      rect:
+        serializedVersion: 2
+        x: 2602
+        y: 1133
+        width: 324
+        height: 693
+      alignment: 9
+      pivot: {x: .254422426, y: .376850069}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spy_climb_13
+      rect:
+        serializedVersion: 2
+        x: 3107
+        y: 1133
+        width: 324
+        height: 693
+      alignment: 9
+      pivot: {x: .255447209, y: .377238661}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spy_climb_14
+      rect:
+        serializedVersion: 2
+        x: 3672
+        y: 1076
+        width: 312
+        height: 814
+      alignment: 9
+      pivot: {x: .24559921, y: .390555114}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spy_climb_15
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 44
+        width: 313
+        height: 812
+      alignment: 9
+      pivot: {x: .244794264, y: .39213118}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spy_climb_16
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 31
+        width: 279
+        height: 841
+      alignment: 9
+      pivot: {x: .105040848, y: .395443231}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spy_climb_17
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 36
+        width: 281
+        height: 841
+      alignment: 9
+      pivot: {x: .129420593, y: .387631923}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spy_climb_18
+      rect:
+        serializedVersion: 2
+        x: 2130
+        y: 44
+        width: 320
+        height: 850
+      alignment: 9
+      pivot: {x: .0563316345, y: .375342071}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spy_climb_19
+      rect:
+        serializedVersion: 2
+        x: 2667
+        y: 44
+        width: 320
+        height: 850
+      alignment: 9
+      pivot: {x: .0576858521, y: .375320584}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spy_climb_20
+      rect:
+        serializedVersion: 2
+        x: 3139
+        y: 56
+        width: 372
+        height: 825
+      alignment: 9
+      pivot: {x: .132622838, y: .371825963}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spy_climb_21
+      rect:
+        serializedVersion: 2
+        x: 3697
+        y: 56
+        width: 371
+        height: 825
+      alignment: 9
+      pivot: {x: .133047432, y: .372729838}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

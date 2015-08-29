@@ -6,14 +6,10 @@ public class JumpLeftRight : MonoBehaviour {
 	[SerializeField] private float leftLimitX = -1.53f;
 	[SerializeField] private float rightLimitX = 1.45f;
 
-	public GameObject PlayerClimbLeft;
-	public GameObject PlayerClimbRight;
-	public GameObject PlayerJumpLeft;
-	public GameObject PlayerJumpRight;
-
     public GameObject RunEffectContainer;
 
-    private GameObject ActivePlayer;
+    private GameObject Spy;
+    private Animator SpyAnimator;
 
     private SoundControls soundControls;
 
@@ -23,27 +19,29 @@ public class JumpLeftRight : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         soundControls = GameObject.FindGameObjectWithTag("SoundsController").GetComponent<SoundControls>();
+        Spy = GameObject.FindGameObjectWithTag("Player");
+        SpyAnimator = Spy.GetComponent <Animator> ();
 
-        PlayerClimbLeft.SetActive (true);
-		ActivePlayer = PlayerClimbLeft;
         soundControls.PlayClimbingSound();
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		float currentPositionX = transform.position.x;
 
-		// jump left
+		// jump to the left
 		if ((Input.GetKeyDown ("space") || TouchedScreen()) && !movingLeft && !movingRight && currentPositionX > leftLimitX) {
 			soundControls.PlayJump();
-			gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2((-1f)*moveForce, 0);
+
+            // start to move left
+            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2((-1f)*moveForce, 0);
 			movingLeft = true;
 
             // change to jumping left sprite
-			ActivePlayer.SetActive(false);
-			PlayerJumpLeft.SetActive(true);
-			ActivePlayer = PlayerJumpLeft;
-		}
+            SpyAnimator.SetTrigger("Jumping");
+            SpyAnimator.ResetTrigger("Climbing");
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }
 
 		// Climb left
 		if (transform.position.x <= leftLimitX && movingLeft == true)
@@ -55,10 +53,9 @@ public class JumpLeftRight : MonoBehaviour {
             // sinaliza final de pulo
             movingLeft = false;
 
-            // troca sprint para subindo
-			ActivePlayer.SetActive(false);
-			PlayerClimbLeft.SetActive(true);
-			ActivePlayer = PlayerClimbLeft;
+            // change to climbing left sprite
+            SpyAnimator.SetTrigger("Climbing");
+            SpyAnimator.ResetTrigger("Jumping");
 
             // invert x position of RunEffectContainer animation
             RunEffectContainer.transform.position = new Vector2(0, RunEffectContainer.transform.position.y);
@@ -67,8 +64,13 @@ public class JumpLeftRight : MonoBehaviour {
             soundControls.PlayClimbingSound();
         }
 
-        // jump right
+        // jump to right
         if ((Input.GetKeyDown ("space") || TouchedScreen()) && !movingRight && !movingLeft && currentPositionX < rightLimitX) {
+            // change to jumping left sprite
+            SpyAnimator.SetTrigger("Jumping");
+            SpyAnimator.ResetTrigger("Climbing");
+            transform.eulerAngles = new Vector3(0, 180, 0);
+
             // para som de subida
             soundControls.StopClimbingSound();
 
@@ -76,23 +78,19 @@ public class JumpLeftRight : MonoBehaviour {
 			gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(moveForce, 0);
 			movingRight = true;
 
-			ActivePlayer.SetActive(false);
-			PlayerJumpRight.SetActive(true);
-			ActivePlayer = PlayerJumpRight;
-
             soundControls.StopClimbingSound();
         }
 
         // Climb right
         if (transform.position.x >= rightLimitX && movingRight == true)
 		{
-			gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            // change to climbing right sprite
+            SpyAnimator.SetTrigger("Climbing");
+            SpyAnimator.ResetTrigger("Jumping");
+
+            gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 			gameObject.transform.position = new Vector2(rightLimitX, gameObject.transform.position.y);
 			movingRight = false;
-
-			ActivePlayer.SetActive(false);
-			PlayerClimbRight.SetActive(true);
-			ActivePlayer = PlayerClimbRight;
 
             // invert x position of RunEffectContainer animation
             RunEffectContainer.transform.position = new Vector2(8.62f, RunEffectContainer.transform.position.y);
