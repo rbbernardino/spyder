@@ -13,7 +13,6 @@ public class GenerateObject : MonoBehaviour
 	void Start()
 	{
 		InvokeRepeating("CreateItems", StartTime, RepeatTime);
-		//_score = GameObject.FindGameObjectWithTag ("Score").GetComponent<Score> ();
 	}
 	
 	void CreateItems()
