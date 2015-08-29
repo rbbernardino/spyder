@@ -3,11 +3,12 @@
 public class GenerateObject : MonoBehaviour
 {
 	public GameObject item;
-	public float position = 0.35f;
-	public float StartTime = 1;
-	public float RepeatTime = 1;
-	public float difUnit = 1f;
-	
+
+	public float position;
+	public float StartTime;
+	public float RepeatTime;
+	public float difUnit;
+
 	private Score _score;
 	// Use this for initialization
 	void Start()

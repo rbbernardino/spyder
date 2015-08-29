@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class GameplayControls : MonoBehaviour {
+    [SerializeField] private GameObject btPause;
     [SerializeField] private GameObject menuPause;
     [SerializeField] private GameObject menuGameOver;
 
@@ -16,11 +17,23 @@ public class GameplayControls : MonoBehaviour {
         menuGameOver.SetActive(false);
     }
 
-    public void ShowGameover() { menuGameOver.SetActive(true); }
+    public void ShowGameover()
+    {
+        menuGameOver.SetActive(true);
+        btPause.SetActive(false);
+    }
     public void HideGameover() { menuGameOver.SetActive(false); }
 
-    public void ShowPauseMenu() { menuPause.SetActive(true); }
-    public void HidePauseMenu() { menuPause.SetActive(false); }
+    public void ShowPauseMenu()
+    {
+        menuPause.SetActive(true);
+        btPause.SetActive(false);
+    }
+    public void HidePauseMenu()
+    {
+        btPause.SetActive(true);
+        menuPause.SetActive(false);
+    }
 
     public void HidePlayer() { Player.SetActive(false); }
 
@@ -42,13 +55,13 @@ public class GameplayControls : MonoBehaviour {
         //Set time.timescale to 0, this will cause animations and physics to stop updating
         Time.timeScale = 0;
         //Show pause menu
-        menuPause.SetActive(true);
+        ShowPauseMenu();
         soundControls.StopClimbingSound();
     }
 
     public void Resume()
     {
-        menuPause.SetActive(false);
+        HidePauseMenu();
         Time.timeScale = 1;
         soundControls.PlayClimbingSound();
     }

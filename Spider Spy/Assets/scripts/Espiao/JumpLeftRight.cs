@@ -26,7 +26,7 @@ public class JumpLeftRight : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
+	void Update () {
 		float currentPositionX = transform.position.x;
 
 		// jump to the left

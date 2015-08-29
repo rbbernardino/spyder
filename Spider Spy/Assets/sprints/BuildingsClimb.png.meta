@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: aac51cb8459db964385ae2cbe1cde35a
-timeCreated: 1439936483
+guid: 724cedbd6314e3642be67c8df88190af
+timeCreated: 1440880252
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: gameplay_assets_0
-    21300002: gameplay_assets_1
+    21300000: BuildingsClimb_esq
+    21300002: BuildingsClimb_dir
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -28,8 +28,8 @@ TextureImporter:
   cubemapConvolutionSteps: 8
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: -3
-  maxTextureSize: 1024
+  textureFormat: -1
+  maxTextureSize: 2048
   textureSettings:
     filterMode: -1
     aniso: 16
@@ -51,25 +51,25 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: gameplay_assets_0
+    - name: BuildingsClimb_esq
       rect:
         serializedVersion: 2
-        x: 137
-        y: 124
-        width: 802
-        height: 1281
+        x: 0
+        y: 0
+        width: 185
+        height: 1280
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: gameplay_assets_1
+    - name: BuildingsClimb_dir
       rect:
         serializedVersion: 2
-        x: 2097
-        y: 196
-        width: 319
-        height: 1587
+        x: 590
+        y: 0
+        width: 210
+        height: 1280
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
