@@ -14,6 +14,5 @@ public class ScoreExibition : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		_text.text =  _Score._score.ToString();
-        Debug.Log(_text.isActiveAndEnabled);
 	}
 }
