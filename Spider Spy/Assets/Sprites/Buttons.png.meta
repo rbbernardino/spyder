@@ -1,15 +1,15 @@
 fileFormatVersion: 2
 guid: 0af13d21f4741604dae8b10207cf5845
-timeCreated: 1440947490
+timeCreated: 1440952009
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: button_play_1-normal
+    21300000: button_start_1-normal
     21300002: button_reset_2-pressed
     21300004: button_menu_2-pressed
-    21300006: button_config_2-pressed
+    21300006: button_settings_2-pressed
     21300008: button_share_2-pressed
-    21300010: button_play_2-pressed
+    21300010: button_start_2-pressed
     21300012: button_reset_1-normal
     21300014: button_menu_1-normal
     21300016: button_settings_1-normal
@@ -67,15 +67,15 @@ TextureImporter:
     compressionQuality: 50
   spriteSheet:
     sprites:
-    - name: button_play_1-normal
+    - name: button_start_1-normal
       rect:
         serializedVersion: 2
         x: 10
         y: 383
         width: 273
         height: 296
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .39539811, y: .542354465}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: button_reset_2-pressed
       rect:
@@ -97,7 +97,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: button_config_2-pressed
+    - name: button_settings_2-pressed
       rect:
         serializedVersion: 2
         x: 627
@@ -117,15 +117,15 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: button_play_2-pressed
+    - name: button_start_2-pressed
       rect:
         serializedVersion: 2
         x: 9
         y: 6
         width: 265
         height: 302
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .39539811, y: .542354524}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: button_reset_1-normal
       rect:
