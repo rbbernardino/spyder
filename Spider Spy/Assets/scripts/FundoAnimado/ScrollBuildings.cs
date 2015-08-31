@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ScrollBuildings : MonoBehaviour {
 
-    public float scrollSpeed;
+    private float scrollSpeed;
     public float tileSizeY;
 
     private Vector3 startPosition;
@@ -11,6 +11,7 @@ public class ScrollBuildings : MonoBehaviour {
     void Start()
     {
         startPosition = transform.position;
+        scrollSpeed = GameObject.FindGameObjectWithTag("GameController").GetComponent<Settings>().BuildingsSpeed;
     }
 
     void Update()

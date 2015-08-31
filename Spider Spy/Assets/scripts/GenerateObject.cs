@@ -21,7 +21,6 @@ public class GenerateObject : MonoBehaviour
 		float pos = ((Random.value >= 0.5f) ? position : -position);
 		GameObject bomb = gameObject.GetComponent<GetRandomObject>().GetRandomThreatObject ();
 		int r = Random.Range (1, 15);
-		Debug.Log (r);
 		switch (r) { // [min, max[
 		case (1): // 1 bomb // easy
 			pos = ((Random.value >= 0.3f) ? pos : 0);

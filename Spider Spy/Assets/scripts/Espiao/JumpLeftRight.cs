@@ -6,6 +6,11 @@ public class JumpLeftRight : MonoBehaviour {
 	[SerializeField] private float leftLimitX = -1.53f;
 	[SerializeField] private float rightLimitX = 1.45f;
 
+    [SerializeField] private GameObject LeftCrackSet;
+    [SerializeField] private GameObject RightCrackSet;
+
+    private GenerateCracks cracksLeftGenerator;
+    private GenerateCracks cracksRightGenerator;
     public GameObject RunEffectContainer;
 
     private GameObject Spy;
@@ -21,12 +26,16 @@ public class JumpLeftRight : MonoBehaviour {
         soundControls = GameObject.FindGameObjectWithTag("SoundsController").GetComponent<SoundControls>();
         Spy = GameObject.FindGameObjectWithTag("Player");
         SpyAnimator = Spy.GetComponent <Animator> ();
+        cracksLeftGenerator = LeftCrackSet.GetComponent<GenerateCracks>();
+        cracksRightGenerator = RightCrackSet.GetComponent<GenerateCracks>();
 
         soundControls.PlayClimbingSound();
-	}
-	
-	// Update is called once per frame
-	void Update () {
+
+        cracksLeftGenerator.StartCracks();
+    }
+
+    // Update is called once per frame
+    void Update () {
 		float currentPositionX = transform.position.x;
 
 		// jump to the left
@@ -41,6 +50,9 @@ public class JumpLeftRight : MonoBehaviour {
             SpyAnimator.SetTrigger("Jumping");
             SpyAnimator.ResetTrigger("Climbing");
             transform.eulerAngles = new Vector3(0, 0, 0);
+
+            // stop cracks on left side
+            cracksRightGenerator.StopCracks();
         }
 
 		// Climb left
@@ -62,10 +74,15 @@ public class JumpLeftRight : MonoBehaviour {
 
             // inicia som de subida
             soundControls.PlayClimbingSound();
+
+            // starts cracks on the left side
+            cracksLeftGenerator.StartCracks();
         }
 
         // jump to right
         if ((Input.GetKeyDown ("space") || TouchedScreen()) && !movingRight && !movingLeft && currentPositionX < rightLimitX) {
+            soundControls.PlayJump();
+
             // change to jumping left sprite
             SpyAnimator.SetTrigger("Jumping");
             SpyAnimator.ResetTrigger("Climbing");
@@ -74,11 +91,12 @@ public class JumpLeftRight : MonoBehaviour {
             // para som de subida
             soundControls.StopClimbingSound();
 
-            gameObject.GetComponent<AudioSource>().Play ();
 			gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(moveForce, 0);
 			movingRight = true;
 
             soundControls.StopClimbingSound();
+
+            cracksLeftGenerator.StopCracks();
         }
 
         // Climb right
@@ -97,6 +115,8 @@ public class JumpLeftRight : MonoBehaviour {
 
             // inicia som de subida
             soundControls.PlayClimbingSound();
+
+            cracksRightGenerator.StartCracks();
         }
     }
 

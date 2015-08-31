@@ -44,16 +44,6 @@ public class MainMenu : MonoBehaviour {
     }
 
     /// <summary>
-    /// Menus, Screens, etc. Hide/Show functions
-    /// </summary>
-    private void ShowSettingsMenu()  { settingsMenu.SetActive(true);   }
-    private void HideSettingsMenu()  { settingsMenu.SetActive(false);  }
-    private void ShowCreditsScreen() { creditsScreen.SetActive(true);  }
-    private void HideCreditsScreen() { creditsScreen.SetActive(false); }
-    private void ShowMainMenu()      { mainMenu.SetActive(true);       }
-    private void HideMainMenu()      { mainMenu.SetActive(false);      }
-
-    /// <summary>
     /// User Interface Functions
     /// </summary>
     public void Play()
@@ -77,6 +67,7 @@ public class MainMenu : MonoBehaviour {
 
     public void ReturnToMainMenu()
     {
+        onCreditScreen = false;
         HideCreditsScreen();
         HideSettingsMenu();
         ShowMainMenu();
@@ -98,6 +89,16 @@ public class MainMenu : MonoBehaviour {
         PlayerPrefs.SetString("soundFx", soundFxToggleOn.ToString());
         SetSoundsVolume(toogleMusic.isOn, soundFxToggleOn);
     }
+
+    /// <summary>
+    /// Menus, Screens, etc. Hide/Show functions
+    /// </summary>
+    private void ShowSettingsMenu() { settingsMenu.SetActive(true); }
+    private void HideSettingsMenu() { settingsMenu.SetActive(false); }
+    private void ShowCreditsScreen() { creditsScreen.SetActive(true); }
+    private void HideCreditsScreen() { creditsScreen.SetActive(false); }
+    private void ShowMainMenu() { mainMenu.SetActive(true); }
+    private void HideMainMenu() { mainMenu.SetActive(false); }
 
     /// <summary>
     /// Helper functions

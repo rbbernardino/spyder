@@ -1,13 +1,11 @@
 fileFormatVersion: 2
-guid: d710fceae4a6af54d98dd91e8b838af8
-timeCreated: 1440963411
+guid: 653f68cfcb87ae048915f8302d88e978
+timeCreated: 1440993962
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: settings-checkbox_checked
-    21300002: settings-checkbox_unchecked
-    21300004: settings-checkbox_check
-    21300006: settings-checkbox_box
+    21300000: settings-checkbox_0
+    21300002: settings-checkbox_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -57,7 +55,7 @@ TextureImporter:
     compressionQuality: 50
   spriteSheet:
     sprites:
-    - name: settings-checkbox_check
+    - name: settings-checkbox_0
       rect:
         serializedVersion: 2
         x: 37
@@ -65,9 +63,9 @@ TextureImporter:
         width: 143
         height: 139
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: settings-checkbox_box
+    - name: settings-checkbox_1
       rect:
         serializedVersion: 2
         x: 30
@@ -75,7 +73,7 @@ TextureImporter:
         width: 109
         height: 109
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

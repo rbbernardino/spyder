@@ -51,7 +51,11 @@ TextureImporter:
   spritePixelsToUnits: 375
   alphaIsTransparency: 1
   textureType: 8
-  buildTargetSettings: []
+  buildTargetSettings:
+  - buildTarget: Android
+    maxTextureSize: 1024
+    textureFormat: -3
+    compressionQuality: 50
   spriteSheet:
     sprites:
     - name: cenario4-ceu_0
