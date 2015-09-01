@@ -9,6 +9,8 @@ public class MainMenu : MonoBehaviour {
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject settingsMenu;
     [SerializeField] private GameObject creditsScreen;
+    [SerializeField] private GameObject loadingScreen;
+
 
     [SerializeField] private AudioMixerSnapshot muteMusic;
     [SerializeField] private AudioMixerSnapshot muteSoundFx;
@@ -48,7 +50,7 @@ public class MainMenu : MonoBehaviour {
     /// </summary>
     public void Play()
     {
-        Application.LoadLevel("Gameplay");
+        //Application.LoadLevel("Gameplay");
         StartCoroutine(GoPlay());
     }
 
@@ -106,8 +108,9 @@ public class MainMenu : MonoBehaviour {
     /// <returns></returns>
 	IEnumerator GoPlay()
 	{
-        GameObject.FindGameObjectWithTag ("Player").GetComponent<Animator> ().SetBool ("Play", true);
-		yield return new WaitForSeconds (2.5f);
+        //GameObject.FindGameObjectWithTag ("Player").GetComponent<Animator> ().SetBool ("Play", true);
+        loadingScreen.SetActive(true);
+        yield return new WaitForSeconds (1.5f);
 		Application.LoadLevel ("Gameplay");
 	}
 
