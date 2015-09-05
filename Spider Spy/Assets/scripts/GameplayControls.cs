@@ -22,11 +22,13 @@ public class GameplayControls : MonoBehaviour {
         menuGameOver.SetActive(false);
         tutorial.SetActive(false);
 
-        if (!PlayerPrefs.HasKey("firstTime"))
-            PlayerPrefs.SetString("firstTime", "true");
+        if (!PlayerPrefs.HasKey ("firstTime")) {
+			PlayerPrefs.SetString ("firstTime", "true");
+		}
         isFirstTime = bool.Parse(PlayerPrefs.GetString("firstTime"));
-        if (isFirstTime)
-           DoTutorial();
+        if (isFirstTime) {
+			DoTutorial ();
+		}
     }
 
     public void Update()
