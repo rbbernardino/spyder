@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 724cedbd6314e3642be67c8df88190af
-timeCreated: 1440880252
+timeCreated: 1441753906
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -60,7 +60,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 185
+        width: 177
         height: 1280
       alignment: 0
       pivot: {x: .5, y: .5}
@@ -68,9 +68,9 @@ TextureImporter:
     - name: BuildingsClimb_dir
       rect:
         serializedVersion: 2
-        x: 590
+        x: 606
         y: 0
-        width: 210
+        width: 194
         height: 1280
       alignment: 0
       pivot: {x: .5, y: .5}

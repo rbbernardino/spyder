@@ -78,9 +78,9 @@ public class GameplayControls : MonoBehaviour {
 
     public void MainMenu()
     {
-        soundControls.PlayButton();
-        Application.LoadLevel("Main Menu");
+        Application.LoadLevel(0);
         Time.timeScale = 1;
+        soundControls.PlayButton();
     }
 
     public void Pause()

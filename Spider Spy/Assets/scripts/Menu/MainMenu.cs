@@ -50,8 +50,8 @@ public class MainMenu : MonoBehaviour {
     /// </summary>
     public void Play()
     {
-        //Application.LoadLevel("Gameplay");
-        StartCoroutine(GoPlay());
+        int loadedLevel = Application.loadedLevel;
+        Application.LoadLevelAsync(loadedLevel + 1);
     }
 
     public void OpenSettings()
@@ -101,19 +101,6 @@ public class MainMenu : MonoBehaviour {
     private void HideCreditsScreen() { creditsScreen.SetActive(false); }
     private void ShowMainMenu() { mainMenu.SetActive(true); }
     private void HideMainMenu() { mainMenu.SetActive(false); }
-
-    /// <summary>
-    /// Helper functions
-    /// </summary>
-    /// <returns></returns>
-	IEnumerator GoPlay()
-	{
-        //GameObject.FindGameObjectWithTag ("Player").GetComponent<Animator> ().SetBool ("Play", true);
-        loadingScreen.SetActive(true);
-        yield return new WaitForSeconds (1.5f);
-		Application.LoadLevel ("Gameplay");
-	}
-
 
     private static bool TouchedScreen()
     {
