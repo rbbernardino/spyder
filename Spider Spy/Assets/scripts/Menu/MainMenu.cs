@@ -20,11 +20,13 @@ public class MainMenu : MonoBehaviour {
     [SerializeField] private Toggle toogleMusic;
     [SerializeField] private Toggle toogleSoundFx;
 
-    private bool onCreditScreen;
+    void Awake()
+    {
+        Application.runInBackground = false;
+    }
 
     void Start()
     {
-        onCreditScreen = false;
         mainMenu.SetActive(true);
         settingsMenu.SetActive(false);
         creditsScreen.SetActive(false);
@@ -35,14 +37,6 @@ public class MainMenu : MonoBehaviour {
 
         toogleMusic.isOn = bool.Parse(PlayerPrefs.GetString("music"));
         toogleSoundFx.isOn = bool.Parse(PlayerPrefs.GetString("soundFx"));
-    }
-
-    void Update()
-    {
-        if((Input.GetKeyDown("space") || TouchedScreen()) && onCreditScreen)
-        {
-            ReturnToMainMenu();
-        }
     }
 
     /// <summary>
@@ -64,12 +58,10 @@ public class MainMenu : MonoBehaviour {
     {
         HideMainMenu();
         ShowCreditsScreen();
-        onCreditScreen = true;
     }
 
     public void ReturnToMainMenu()
     {
-        onCreditScreen = false;
         HideCreditsScreen();
         HideSettingsMenu();
         ShowMainMenu();

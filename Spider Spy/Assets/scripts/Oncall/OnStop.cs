@@ -18,8 +18,9 @@ public class OnStop : MonoBehaviour {
 			//			PauseSplash.SetActive(true);
 			if (GameController != ""){
 				PauseSplash=GameObject.FindGameObjectWithTag(GameController);
-				PauseSplash.GetComponent<GameplayControls>().ShowPauseMenu();
-			}
+
+                PauseSplash.GetComponent<GameplayControls>().ShowPauseMenu();
+            }
 		} else {
 			//Caso desejem por Splash de pause no meio do jogo COMENTAR abaixo
 			//(Seus "pauses gameobjects) devem despausar o jogo

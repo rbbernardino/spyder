@@ -41,5 +41,6 @@ public class CheckCollision : MonoBehaviour
         score.SaveScore ();
         gameplayControls.ShowGameover();
         gameplayControls.HidePlayer();
-	}
+        Destroy(GameObject.FindGameObjectWithTag("RunEffect").gameObject);
+    }
 }

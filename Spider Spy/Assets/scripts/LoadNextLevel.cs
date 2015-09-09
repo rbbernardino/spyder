@@ -3,8 +3,13 @@ using System.Collections;
 
 public class LoadNextLevel : MonoBehaviour {
 
-	// Use this for initialization
-	void Start ()
+    void Awake()
+    {
+        Application.runInBackground = false;
+    }
+
+    // Use this for initialization
+    void Start ()
     {
         int loadedLevel = Application.loadedLevel;
         Application.LoadLevelAsync(loadedLevel + 1);

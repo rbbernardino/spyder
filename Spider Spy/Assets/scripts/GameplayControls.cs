@@ -8,15 +8,22 @@ public class GameplayControls : MonoBehaviour {
     [SerializeField] private GameObject tutorial;
 
     private GameObject Player;
+    private GameObject PlayerContainer;
     private SoundControls soundControls;
 
     private bool isFirstTime;
 
     private bool onTutorial;
 
+    void Awake()
+    {
+        Application.runInBackground = false;
+    }
+
     public void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
+        PlayerContainer = GameObject.FindGameObjectWithTag("PlayerContainer");
         soundControls = GameObject.FindGameObjectWithTag("SoundsController").GetComponent<SoundControls>();
         menuPause.SetActive(false);
         menuGameOver.SetActive(false);
@@ -59,8 +66,11 @@ public class GameplayControls : MonoBehaviour {
 
     public void ShowPauseMenu()
     {
-        menuPause.SetActive(true);
-        btPause.SetActive(false);
+        if (Player.GetComponent<CheckCollision>().alive())
+        {
+            menuPause.SetActive(true);
+            btPause.SetActive(false);
+        }
     }
     public void HidePauseMenu()
     {
@@ -68,7 +78,11 @@ public class GameplayControls : MonoBehaviour {
         menuPause.SetActive(false);
     }
 
-    public void HidePlayer() { Player.SetActive(false); }
+    public void HidePlayer()
+    {
+        Player.SetActive(false);
+        PlayerContainer.SetActive(false);
+    }
 
     public void ResetGame()
     {

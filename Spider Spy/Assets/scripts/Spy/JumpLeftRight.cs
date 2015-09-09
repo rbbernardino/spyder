@@ -2,9 +2,9 @@
 using System.Collections;
 
 public class JumpLeftRight : MonoBehaviour {
-	[SerializeField] private float moveForce = 5f;
-	[SerializeField] private float leftLimitX = -1.53f;
-	[SerializeField] private float rightLimitX = 1.45f;
+	[SerializeField] private float moveForce;
+	[SerializeField] private float leftLimitX;
+	[SerializeField] private float rightLimitX;
 
     [SerializeField] private GameObject LeftCrackSet;
     [SerializeField] private GameObject RightCrackSet;
