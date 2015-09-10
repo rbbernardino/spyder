@@ -4,13 +4,13 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour {
-    [SerializeField]
-    private GameObject ButtonSound;
+    [SerializeField] private GameObject ButtonSound;
+    [SerializeField] private GameObject MusicSound;
+
+
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject settingsMenu;
     [SerializeField] private GameObject creditsScreen;
-    [SerializeField] private GameObject loadingScreen;
-
 
     [SerializeField] private AudioMixerSnapshot muteMusic;
     [SerializeField] private AudioMixerSnapshot muteSoundFx;
@@ -20,9 +20,28 @@ public class MainMenu : MonoBehaviour {
     [SerializeField] private Toggle toogleMusic;
     [SerializeField] private Toggle toogleSoundFx;
 
+    private bool isFirstTime;
+    private bool isMusicOn;
+    private bool isSoundFxOn;
+
     void Awake()
     {
         Application.runInBackground = false;
+
+        if (!PlayerPrefs.HasKey("firstTime"))
+            PlayerPrefs.SetString("firstTime", "true");
+        isFirstTime = bool.Parse(PlayerPrefs.GetString("firstTime"));
+
+        if (isFirstTime)
+        {
+            PlayerPrefs.SetString("music", "true");
+            PlayerPrefs.SetString("soundFx", "true");
+        }
+
+        // load user sounds preferences
+        isMusicOn = bool.Parse(PlayerPrefs.GetString("music"));
+        isSoundFxOn = bool.Parse(PlayerPrefs.GetString("soundFx"));
+        UpdateSoundsVolume();
     }
 
     void Start()
@@ -31,12 +50,8 @@ public class MainMenu : MonoBehaviour {
         settingsMenu.SetActive(false);
         creditsScreen.SetActive(false);
 
-        // load user sounds preferences
-        if (!PlayerPrefs.HasKey("music")) PlayerPrefs.SetString("music", "true");
-        if (!PlayerPrefs.HasKey("soundFx")) PlayerPrefs.SetString("soundFx", "true");
-
-        toogleMusic.isOn = bool.Parse(PlayerPrefs.GetString("music"));
-        toogleSoundFx.isOn = bool.Parse(PlayerPrefs.GetString("soundFx"));
+        // Play independently of on or off, if volume is down no sound will be output
+        MusicSound.GetComponent<AudioSource>().Play();
     }
 
     /// <summary>
@@ -72,16 +87,18 @@ public class MainMenu : MonoBehaviour {
         ButtonSound.GetComponent<AudioSource>().Play();
     }
 
-    public void ToogleMusicOn(bool musicToggleOn)
+    public void ToogleMusic(bool musicToggle)
     {
-        PlayerPrefs.SetString("music", musicToggleOn.ToString());
-        SetSoundsVolume(musicToggleOn, toogleSoundFx.isOn);
+        PlayerPrefs.SetString("music", musicToggle.ToString());
+        isMusicOn = musicToggle;
+        UpdateSoundsVolume();
     }
 
-    public void ToogleSoundFxOn(bool soundFxToggleOn)
+    public void ToogleSoundFx(bool soundFxToggle)
     {
-        PlayerPrefs.SetString("soundFx", soundFxToggleOn.ToString());
-        SetSoundsVolume(toogleMusic.isOn, soundFxToggleOn);
+        PlayerPrefs.SetString("soundFx", soundFxToggle.ToString());
+        isSoundFxOn = soundFxToggle;
+        UpdateSoundsVolume();
     }
 
     /// <summary>
@@ -102,12 +119,14 @@ public class MainMenu : MonoBehaviour {
             return false;
     }
 
-    private void SetSoundsVolume(bool musicToggleOn, bool soundFxToggleOn)
+    private void UpdateSoundsVolume()
     {
-        float fadeTime = 0.1f;
-        if ( musicToggleOn  &&  soundFxToggleOn) allSoundsOn.   TransitionTo(fadeTime);
-        if (!musicToggleOn  && !soundFxToggleOn) muteAllSounds. TransitionTo(fadeTime);
-        if (!musicToggleOn  &&  soundFxToggleOn) muteMusic.     TransitionTo(fadeTime);
-        if ( musicToggleOn  && !soundFxToggleOn) muteSoundFx.   TransitionTo(fadeTime);
+        toogleMusic.isOn = isMusicOn;
+        toogleSoundFx.isOn = isSoundFxOn;
+        float fadeTime = 0f;
+        if ( isMusicOn &&  isSoundFxOn) allSoundsOn.   TransitionTo(fadeTime);
+        if (!isMusicOn && !isSoundFxOn) muteAllSounds. TransitionTo(fadeTime);
+        if (!isMusicOn &&  isSoundFxOn) muteMusic.     TransitionTo(fadeTime);
+        if ( isMusicOn && !isSoundFxOn) muteSoundFx.   TransitionTo(fadeTime);
     }
 }

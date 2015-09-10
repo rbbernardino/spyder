@@ -1,0 +1,125 @@
+fileFormatVersion: 2
+guid: 6391c328a2687854a8518df2a58956cd
+timeCreated: 1441857088
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: mala-anim_0
+    21300002: mala-anim_1
+    21300004: mala-anim_2
+    21300006: mala-anim_3
+    21300008: mala-anim_4
+    21300010: mala-anim_5
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Android
+    maxTextureSize: 1024
+    textureFormat: -3
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: mala-anim_0
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 338
+        width: 199
+        height: 190
+      alignment: 9
+      pivot: {x: .5, y: .0738902837}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mala-anim_1
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 339
+        width: 200
+        height: 192
+      alignment: 9
+      pivot: {x: .503200054, y: .0716622695}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mala-anim_2
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 343
+        width: 201
+        height: 189
+      alignment: 9
+      pivot: {x: .507960081, y: .0530112945}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mala-anim_3
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 63
+        width: 201
+        height: 189
+      alignment: 9
+      pivot: {x: .5095523, y: .0530112125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mala-anim_4
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 63
+        width: 200
+        height: 188
+      alignment: 9
+      pivot: {x: .506399989, y: .0540378653}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mala-anim_5
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 64
+        width: 199
+        height: 190
+      alignment: 9
+      pivot: {x: .503215849, y: .0688376948}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

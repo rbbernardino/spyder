@@ -22,13 +22,7 @@
     <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="\ 1624027927885640" />
 	
 	<!-- CallStatusBridge -->
-	 <activity android:name=".CallStatusBridge"
-			   android:label="@string/app_name">
-		 <intent-filter>
-			 <action android:name="android.intent.action.MAIN" />
-			 <category android:name="android.intent.category.LAUNCHER" />
-		 </intent-filter>
-	 </activity>
+	 <activity android:name=".CallStatusBridge" android:label="@string/app_name"></activity>
 	<uses-permission android:name="android.permission.READ_PHONE_STATE"/>
   </application>  
 </manifest>

@@ -28,13 +28,13 @@ public class GenerateCracks : MonoBehaviour {
 
     private void FillPositionList()
     {
-        positionList[0] = new Vector3(-0.999f, 1.463f, 0);
-        positionList[1] = new Vector3(-1.008f, 0.624f, 0);
-        positionList[2] = new Vector3(-1.115f, 0.224f, 0);
-        positionList[3] = new Vector3(-1.027f, -0.312f, 0);
-        positionList[4] = new Vector3(-0.988f, -0.663f, 0);
-        positionList[5] = new Vector3(-1.183f, -0.001f, 0);
-        positionList[6] = new Vector3(-1.28f, 0.574f, 0);
+        positionList[0] = new Vector3(-0.79f, 0.15f, 0);
+        positionList[1] = new Vector3(-0.933f, -0.043f, 0);
+        positionList[2] = new Vector3(-0.89f, -0.732f, 0);
+        positionList[3] = new Vector3(-0.89f, -1.21f, 0);
+        positionList[4] = new Vector3(-0.89f, -1.6f, 0);
+        positionList[5] = new Vector3(-0.89f, -1.7f, 0);
+        positionList[6] = new Vector3(-0.89f, -1.82f, 0);
     }
 
     public void StartCracks()

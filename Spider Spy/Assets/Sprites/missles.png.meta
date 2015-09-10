@@ -1,13 +1,34 @@
 fileFormatVersion: 2
 guid: 13f710bc129b7284eafdf899b6d4eda3
-timeCreated: 1441824823
+timeCreated: 1441858106
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: missles_0
+    21300002: fire_1
+    21300004: missles_6
+    21300006: fire_2
+    21300008: fire_3
+    21300010: missles_11
+    21300012: fire_4
+    21300014: missles_15
+    21300016: missles_16
+    21300018: missles_17
+    21300020: fire_5
+    21300022: missles_19
+    21300024: missles_20
+    21300026: missles_21
+    21300028: fire_6
+    21300030: fire_7
+    21300032: fire_8
+    21300034: missles_25
+    21300036: missles_26
+    21300038: missle_1
+    21300040: missle_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -30,15 +51,14 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -47,9 +67,113 @@ TextureImporter:
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
-  buildTargetSettings: []
+  buildTargetSettings:
+  - buildTarget: Android
+    maxTextureSize: 1024
+    textureFormat: -3
+    compressionQuality: 50
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: fire_1
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 1018
+        width: 190
+        height: 264
+      alignment: 9
+      pivot: {x: .42269063, y: .0131553877}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fire_2
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 1006
+        width: 210
+        height: 275
+      alignment: 9
+      pivot: {x: .466969818, y: .0133407312}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fire_3
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 1002
+        width: 210
+        height: 275
+      alignment: 9
+      pivot: {x: .463083893, y: .0118570225}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fire_4
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 1004
+        width: 232
+        height: 291
+      alignment: 9
+      pivot: {x: .471860677, y: .010653886}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fire_5
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 661
+        width: 251
+        height: 304
+      alignment: 9
+      pivot: {x: .485251755, y: .0108885514}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fire_6
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 651
+        width: 265
+        height: 311
+      alignment: 9
+      pivot: {x: .477882236, y: .012970265}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fire_7
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 637
+        width: 171
+        height: 238
+      alignment: 9
+      pivot: {x: .564944267, y: .0126450481}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: fire_8
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 637
+        width: 171
+        height: 239
+      alignment: 9
+      pivot: {x: .558099031, y: .00975515414}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: missle_1
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 46
+        width: 228
+        height: 513
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: missle_2
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 44
+        width: 228
+        height: 513
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 

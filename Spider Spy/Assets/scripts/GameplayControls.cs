@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Audio;
 
 public class GameplayControls : MonoBehaviour {
     [SerializeField] private GameObject btPause;
@@ -7,17 +8,30 @@ public class GameplayControls : MonoBehaviour {
     [SerializeField] private GameObject menuGameOver;
     [SerializeField] private GameObject tutorial;
 
+    [SerializeField] private GameObject MusicSound;
+
+    [SerializeField] private AudioMixerSnapshot muteMusic;
+    [SerializeField] private AudioMixerSnapshot muteSoundFx;
+    [SerializeField] private AudioMixerSnapshot muteAllSounds;
+    [SerializeField] private AudioMixerSnapshot allSoundsOn;
+
     private GameObject Player;
     private GameObject PlayerContainer;
     private SoundControls soundControls;
 
     private bool isFirstTime;
+    private bool isMusicOn;
+    private bool isSoundFxOn;
 
     private bool onTutorial;
 
     void Awake()
     {
         Application.runInBackground = false;
+        // load user sounds preferences
+        isMusicOn = bool.Parse(PlayerPrefs.GetString("music"));
+        isSoundFxOn = bool.Parse(PlayerPrefs.GetString("soundFx"));
+        UpdateSoundsVolume();
     }
 
     public void Start()
@@ -36,6 +50,9 @@ public class GameplayControls : MonoBehaviour {
         if (isFirstTime) {
 			DoTutorial ();
 		}
+
+        // Play independently of on or off, if volume is down no sound will be output
+        if(isMusicOn) MusicSound.GetComponent<AudioSource>().Play();
     }
 
     public void Update()
@@ -101,6 +118,8 @@ public class GameplayControls : MonoBehaviour {
     {
         //Set time.timescale to 0, this will cause animations and physics to stop updating
         Time.timeScale = 0;
+        // disable jump on touch
+        PlayerContainer.GetComponent<JumpLeftRight>().enabled = false;
         //Show pause menu
         ShowPauseMenu();
         soundControls.StopClimbingSound();
@@ -110,6 +129,7 @@ public class GameplayControls : MonoBehaviour {
     {
         HidePauseMenu();
         Time.timeScale = 1;
+        PlayerContainer.GetComponent<JumpLeftRight>().enabled = true;
         soundControls.PlayClimbingSound();
     }
 
@@ -121,4 +141,12 @@ public class GameplayControls : MonoBehaviour {
             return false;
     }
 
+    private void UpdateSoundsVolume()
+    {
+        float fadeTime = 0.1f;
+        if (isMusicOn && isSoundFxOn) allSoundsOn.TransitionTo(fadeTime);
+        if (!isMusicOn && !isSoundFxOn) muteAllSounds.TransitionTo(fadeTime);
+        if (!isMusicOn && isSoundFxOn) muteMusic.TransitionTo(fadeTime);
+        if (isMusicOn && !isSoundFxOn) muteSoundFx.TransitionTo(fadeTime);
+    }
 }

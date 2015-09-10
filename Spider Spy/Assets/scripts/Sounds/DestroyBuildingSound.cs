@@ -22,6 +22,8 @@ public class DestroyBuildingSound : MonoBehaviour {
 
     public void StopSounds()
     {
+        destroySound1.Stop();
+        destroySound2.Stop();
         CancelInvoke();
     }
 

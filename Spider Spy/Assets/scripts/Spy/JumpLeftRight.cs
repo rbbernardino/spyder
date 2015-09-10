@@ -147,8 +147,20 @@ public class JumpLeftRight : MonoBehaviour {
 
     private static bool TouchedScreen() {
         if (Input.touchCount > 0)
-            return Input.GetTouch(0).phase == TouchPhase.Began;
+            if (Input.GetTouch(0).phase == TouchPhase.Began && !OverPauseButton())
+                return true;
+            else
+                return false;
         else
             return false;
+    }
+    private static bool OverPauseButton()
+    {
+        Debug.Log(Input.GetTouch(0).position);
+        float xPos = Input.GetTouch(0).position.x;
+        float yPos = Input.GetTouch(0).position.y;
+        return
+            xPos > Screen.width - 120 &&
+            yPos > Screen.height - 200;
     }
 }
