@@ -2,12 +2,19 @@
 using System.Collections;
 
 public class OnStop : MonoBehaviour {
-    public GameObject Controller;
+    public GameObject GameController;
+
+    private GameObject Player;
+    private bool playerIsAlive;
 
     void OnApplicationPause(bool pauseState)
 	{
-		if (pauseState == true) {
-            Controller.GetComponent<GameplayControls>().Pause();
+        Player = GameObject.FindGameObjectWithTag("Player");
+        playerIsAlive = Player.GetComponent<CheckCollision>().alive();
+
+        if (pauseState == true && playerIsAlive) {
+           GameController = GameObject.FindGameObjectWithTag("GameController");
+            GameController.GetComponent<GameplayControls>().Pause();
         }
     }
 }
